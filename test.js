@@ -1,12 +1,17 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const app = require('./index');
+const should = require('chai').should();
+const request = require('supertest');
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
-
+describe('test.js', () => {
+        describe('GET /', () => {
+                it('responds with 200', (done) => {
+                        request(app)
+                        .get('/')
+                        .expect(200)
+                        .end((e, res) => {
+                                should.not.exist(e);
+                                done();
+                            });
+                    });
+            });
+    });
