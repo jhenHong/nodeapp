@@ -4,7 +4,7 @@ const port = 8080
 const HOST = '127.0.0.1';
 
 app.get('/', (req, res) => {
-  res.send('Hello Hello!')
+  res.send('Hello wold!')
 })
 
 
