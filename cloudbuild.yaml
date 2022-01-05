@@ -7,6 +7,6 @@ steps:
   args:
   - run
   - --filename=deploy.yaml
-  - --image=gcr.io/firm-star-336501/nodeapp:v0.5
+  - --image=gcr.io/firm-star-336501/nodeapp
   - --location=asia-east1-c   
   - --cluster=cluster-1
