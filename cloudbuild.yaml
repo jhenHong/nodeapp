@@ -3,10 +3,10 @@ steps:
   args: [ 'build', '-t', 'gcr.io/firm-star-336501/nodeapp', '.' ]
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/firm-star-336501/nodeapp']
-- name: 'gcr.io/cloud-builders/kubectl'
+- name: 'gcr.io/cloud-builders/gke-deploy'
   args:
   - run
   - --filename=/cloudbuild.yaml
-  - --image=gcr.io/firm-star-336501/nodeapp:v0.4
+  - --image=gcr.io/firm-star-336501/nodeapp:v0.5
   - --location=asia-east1-c   
   - --cluster=cluster-1
