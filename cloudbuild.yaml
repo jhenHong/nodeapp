@@ -6,7 +6,7 @@ steps:
 - name: 'gcr.io/cloud-builders/gke-deploy'
   args:
   - run
-  - --filename=cloudbuild.yaml
+  - --filename=/usr/src/app/cloudbuild.yaml
   - --image=gcr.io/firm-star-336501/nodeapp:v0.5
   - --location=asia-east1-c   
   - --cluster=cluster-1
