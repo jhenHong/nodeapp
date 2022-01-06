@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
-  creationTimestamp: "2022-01-04T04:07:52Z"
   generation: 1
   labels:
     app: nodeservice
@@ -86,8 +85,6 @@ metadata:
     time: "2022-01-04T04:08:53Z"
   name: nodeservice
   namespace: default
-  resourceVersion: "518569"
-  uid: e04212bb-664e-4a48-9cd5-30a33ab8f39d
 spec:
   progressDeadlineSeconds: 600
   replicas: 3
@@ -102,7 +99,6 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: nodeservice
     spec:
