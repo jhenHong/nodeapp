@@ -1,15 +1,15 @@
 const express = require('express')
 const app = express()
-const port = 8080
-const HOST = '0.0.0.0';
+const port = 8080;
 
-app.get('/', (req, res) => {
-  res.send('Hello wold!')
+app.get('/*', (req, res) => {
+  res.send('Hello wold!' + req.url)
 })
 
 
-app.listen(port, HOST);
-console.log(`Running on http://${HOST}:${port}`);
+app.listen(port );
+console.log(`Running on http://localhost:${port}`);
+
 
 
 
