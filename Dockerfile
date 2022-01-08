@@ -4,7 +4,7 @@ FROM node:16
 WORKDIR /app
 
 # Bundle app source
-COPY /app
+COPY /app /app
 
 RUN npm install
 
