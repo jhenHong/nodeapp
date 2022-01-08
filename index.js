@@ -2,8 +2,12 @@ const express = require('express')
 const app = express()
 const port = 8080;
 
-app.get('/*', (req, res) => {
-  res.send('Hello wold!' + req.url)
+app.get('/v1/*', (req, res) => {
+  res.send('Hello wold!' + req.url + '\n')
+})
+
+app.get('/v2/*', (req, res) => {
+  res.send('Hello wold 2! ' + req.url + '\n')
 })
 
 
