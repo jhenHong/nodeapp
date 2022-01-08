@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    nodeapp2: ""
+  name: nodeapp2
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      nodeapp2: ""
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        nodeapp2: ""
+    spec:
+      containers:
+      - image: gcr.io/firm-star-336501/nodeapp:v2.1
+        imagePullPolicy: IfNotPresent
+        name: nodeapp
+        resources: {}
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30

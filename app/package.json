@@ -1,0 +1,22 @@
+{
+  "name": "nodeapp",
+  "version": "1.0.0",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhenHong/nodeapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jhenHong/nodeapp/issues"
+  },
+  "homepage": "https://github.com/jhenHong/nodeapp#readme",
+  "description": ""
+}
