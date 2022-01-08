@@ -4,7 +4,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/firm-star-336501/nodeapp']
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: ["set","image","deployment/nodeapp1","nodeapp1=gcr.io/firm-star-336501/nodeapp:v1.5"]
+  args: ["set","image","deployment/nodeapp1","nodeapp=gcr.io/firm-star-336501/nodeapp:v1.6"]
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=asia-east1-b'
   - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
