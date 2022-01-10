@@ -3,19 +3,11 @@ steps:
   args: [ 'build', '-t', 'gcr.io/firm-star-336501/nodeapp:$TAG_NAME', '.' ]
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/firm-star-336501/nodeapp:$TAG_NAME']
-- name: "gcr.io/cloud-builders/gke-deploy"
-  args:
-  - run
-  - --filename=/Users/janehong/gcp/cloudBuild/nodeapp/k8s/deploy.yaml
-  - --image=gcr.io/firm-star-336501/nodeapp:$TAG_NAME
-  - --location=asia-east1-b
-  - --cluster=cluster-1
 
-
-#- name: 'gcr.io/cloud-builders/kubectl'
-#  args: ["set","image","deployment/nodeapp1","nodeapp=gcr.io/firm-star-336501/nodeapp:$TAG_NAME"]
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ["set","image","deployment/nodeapp1","nodeapp=gcr.io/firm-star-336501/nodeapp:$TAG_NAME"]
   env:
-#  - 'CLOUDSDK_COMPUTE_ZONE=asia-east1-b'
-#  - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
+  - 'CLOUDSDK_COMPUTE_ZONE=asia-east1-b'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
 #  waitFor:
 #  - 'push-gcr'
