@@ -21,7 +21,7 @@ spec:
         app: nodeapp1
     spec:
       containers:
-      - image: gcr.io/firm-star-336501/nodeapp:v2.7
+      - image: gcr.io/firm-star-336501/nodeapp:v2.8
         imagePullPolicy: IfNotPresent
         name: nodeapp
         resources: {}
