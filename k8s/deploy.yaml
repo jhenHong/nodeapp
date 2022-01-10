@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    nodeapp1: ""
+    app: nodeapp1
   name: nodeapp1
   namespace: default
 spec:
   selector:
     matchLabels:
-      nodeapp1: ""
+      app: nodeapp1
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -18,10 +18,10 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        nodeapp1: ""
+        app: nodeapp1
     spec:
       containers:
-      - image: gcr.io/firm-star-336501/nodeapp:v2.0
+      - image: gcr.io/firm-star-336501/nodeapp:v2.6
         imagePullPolicy: IfNotPresent
         name: nodeapp
         resources: {}
