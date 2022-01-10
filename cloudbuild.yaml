@@ -2,7 +2,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '-t', 'gcr.io/firm-star-336501/nodeapp:$TAG_NAME', '.' ]
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/firm-star-336501/nodeapp:'$TAG_NAME']
+  args: ['push', 'gcr.io/firm-star-336501/nodeapp:$TAG_NAME']
 
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ["apply","-f","k8s/deploy.yaml"]
